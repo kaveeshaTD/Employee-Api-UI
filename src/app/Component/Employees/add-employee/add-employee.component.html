@@ -1,0 +1,43 @@
+<div class="container my-5">
+  <h3 class="mb-3">Create New employee</h3>
+
+  <form #form="ngForm" (ngSubmit)="saveEmployee()">
+    <label class="mb-2">First Name</label>
+    <input
+      type="text"
+      class="form-control w-50"
+      id="fname"
+      name="firstName"
+      [(ngModel)]="addEmployee.firstName"
+    />
+
+    <label class="mb-2 mt-2">Last Name</label>
+    <input
+      type="text"
+      class="form-control w-50"
+      id="lname"
+      name="lastName"
+      [(ngModel)]="addEmployee.lastName"
+    />
+
+    <label class="mb-2 mt-2">Email</label>
+    <input
+      type="text"
+      class="form-control w-50"
+      id="email"
+      name="email"
+      [(ngModel)]="addEmployee.email"
+    />
+
+    <label class="mb-2 mt-2">City</label>
+    <input
+      type="text"
+      class="form-control w-50"
+      id="fnacitye"
+      name="city"
+      [(ngModel)]="addEmployee.city"
+    />
+
+    <button class="btn btn-primary mt-3" type="submit">Submit</button>
+  </form>
+</div>

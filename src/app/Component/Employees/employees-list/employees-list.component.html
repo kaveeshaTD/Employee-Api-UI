@@ -1,0 +1,39 @@
+<div class="container my-5">
+  <h2>Employee List</h2>
+
+  <table class="table mt-5" *ngIf="employees && employees.length > 0">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">City</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.firstName }}</td>
+        <td>{{ employee.lastName }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.city }}</td>
+        <td>
+          <a [routerLink]="['/employees', 'Edit', employee.id]"
+            ><i class="fa-solid fa-hand-pointer text-success"></i
+          ></a>
+          <a href=""
+            ><i
+              class="fa-solid fa-trash-can ms-4 text-danger"
+              (click)="deleteEmployee(employee.id)"
+            ></i
+          ></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="mt-5" *ngIf="!employees || employees.length <= 0">
+    Not Employee Found
+  </p>
+</div>
